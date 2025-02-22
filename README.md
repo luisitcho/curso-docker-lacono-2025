@@ -19,6 +19,8 @@ Este repositório contém materiais práticos sobre Docker, abordando:
         Exemplo: <code>RUN apt-get update && apt-get install -y nginx</code></li>
     <li><strong>COPY</strong> - Copia arquivos do host para o contêiner.<br>
         Exemplo: <code>COPY index.html /usr/share/nginx/html/</code></li>
+    <li><strong>ADD</strong> - Copia arquivos do host ou de uma URL para o contêiner, podendo descompactar arquivos.<br>
+        Exemplo: <code>ADD arquivo.tar.gz /app/</code> ou <code>ADD https://url.do/arquivo.ext /caminho/para/o/</code></li>
     <li><strong>WORKDIR</strong> - Define o diretório de trabalho.<br>
         Exemplo: <code>WORKDIR /app</code></li>
     <li><strong>CMD</strong> - Define o comando padrão a ser executado.<br>
