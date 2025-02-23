@@ -1,0 +1,24 @@
+# Dependências de Node.js
+node_modules/
+yarn-error.log
+npm-debug.log
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Diretórios de build
+dist/
+build/
+
+# Ignorar toda a pasta src/
+# src/
+
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Outros
+*.tgz
