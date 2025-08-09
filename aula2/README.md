@@ -1,46 +1,92 @@
 # Introdução
 
-Este repositório é um aplicativo de exemplo para usuários que estão seguindo o guia de introdução em https://docs.docker.com/get-started/.
+Este repositório é um aplicativo de exemplo para usuários que estão seguindo o guia de introdução do Docker disponível em:  
+https://docs.docker.com/get-started/
 
-O aplicativo é baseado no tutorial de introdução disponível em https://github.com/docker/getting-started.
+O aplicativo é baseado no tutorial oficial disponível em:  
+https://github.com/docker/getting-started
 
-version: 1.0.1
+**Versão:** 1.0.1
 
+---
 
-<h2>Explicação dos Comandos Docker</h2>
+## 📦 Explicação dos Comandos Docker
 
-<h2>1. Construção de Imagem</h2>
-<p class="command">docker build -t app:v1.0.0 .</p>
-<p>Cria uma imagem Docker com o nome <code>app</code> e a versão <code>v1.0.0</code>.</p>
+### 1. Construção de Imagem
+```bash
+docker build -t app:v1.0.0 .
+```
+Cria uma imagem Docker com o nome `app` e a versão `v1.0.0` a partir do **Dockerfile** no diretório atual (`.`).
 
-<h2>2. Listar Imagens</h2>
-<p class="command">docker images</p>
-<p>Lista todas as imagens armazenadas localmente.</p>
+---
 
-<h2>3. Remover Imagem</h2>
-<p class="command">docker image remove app:v1.0.0</p>
-<p>Remove a imagem <code>app:v1.0.0</code> do sistema.</p>
+### 2. Listar Imagens
+```bash
+docker images
+```
+Lista todas as imagens armazenadas localmente, mostrando nome, tag, ID, tamanho e data de criação.
 
-<h2>4. Criar uma Nova Tag para uma Imagem</h2>
-<p class="command">docker image tag 18ebc3d77198 luisitcho/app:v1</p>
-<p>Cria uma nova referência (tag) para a imagem de ID <code>18ebc3d77198</code> como <code>luisitcho/app:v1</code>.</p>
+---
 
-<h2>5. Fazer Login no Docker Hub</h2>
-<p class="command">docker login</p>
-<p>Autentica o usuário no Docker Hub.</p>
+### 3. Remover Imagem
+```bash
+docker image remove app:v1.0.0
+```
+Remove a imagem `app:v1.0.0` do sistema.  
+Também pode ser usado o atalho:
+```bash
+docker rmi app:v1.0.0
+```
 
-<h2>6. Enviar uma Imagem para o Docker Hub</h2>
-<p class="command">docker push luisitcho/app:v1</p>
-<p>Faz o upload da imagem <code>luisitcho/app:v1</code> para o Docker Hub.</p>
+---
 
-<h2>7. Salvar uma Imagem como Arquivo</h2>
-<p class="command">docker image save -o appv2.tar app:v2</p>
-<p>Salva a imagem <code>app:v2</code> como um arquivo <code>appv2.tar</code> no sistema.</p>
+### 4. Criar uma Nova Tag para uma Imagem
+```bash
+docker image tag 18ebc3d77198 luisitcho/app:v1
+```
+Cria uma nova referência (tag) para a imagem de ID `18ebc3d77198` com o nome `luisitcho/app:v1`.  
+Isso é útil para renomear ou preparar a imagem para envio ao Docker Hub.
 
-<h2>8. Remover uma Imagem pelo ID</h2>
-<p class="command">docker image rm -f 18ebc3d77198</p>
-<p>Força a remoção da imagem com ID <code>18ebc3d77198</code>.</p>
+---
 
-<h2>9. Carregar uma Imagem a Partir de um Arquivo</h2>
-<p class="command">docker image load -i appv2.tar</p>
-<p>Carrega a imagem armazenada no arquivo <code>appv2.tar</code> de volta para o Docker.</p>
+### 5. Fazer Login no Docker Hub
+```bash
+docker login
+```
+Autentica o usuário no Docker Hub, permitindo o envio (`push`) e o download (`pull`) de imagens privadas ou públicas.
+
+---
+
+### 6. Enviar uma Imagem para o Docker Hub
+```bash
+docker push luisitcho/app:v1
+```
+Envia a imagem `luisitcho/app:v1` para o repositório no Docker Hub.
+
+---
+
+### 7. Salvar uma Imagem como Arquivo
+```bash
+docker image save -o appv2.tar app:v2
+```
+Exporta a imagem `app:v2` para um arquivo chamado `appv2.tar`, que pode ser transferido ou armazenado como backup.
+
+---
+
+### 8. Remover uma Imagem pelo ID
+```bash
+docker image rm -f 18ebc3d77198
+```
+Força (`-f`) a remoção da imagem com ID `18ebc3d77198`, mesmo que esteja em uso por algum container parado.
+
+---
+
+### 9. Carregar uma Imagem a Partir de um Arquivo
+```bash
+docker image load -i appv2.tar
+```
+Importa uma imagem armazenada no arquivo `appv2.tar` de volta para o Docker.
+
+---
+
+💡 **Dica:** Sempre verifique as imagens existentes antes de remover (`docker images`) para evitar apagar algo importante.
