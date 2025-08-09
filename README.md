@@ -1,7 +1,8 @@
-# 🚀 Docker do Básico ao Avançado  
+# 🚀 Docker do Básico ao Avançado
 
-Este repositório contém materiais práticos sobre Docker, abordando:  
+Este repositório contém materiais práticos e objetivos sobre Docker, abordando desde os conceitos iniciais até práticas avançadas para uso em produção.
 
+## 📚 Tópicos Abordados
 - Conceitos básicos de containers  
 - Instalação do Docker em diferentes sistemas operacionais  
 - Criação e personalização de imagens  
@@ -11,56 +12,156 @@ Este repositório contém materiais práticos sobre Docker, abordando:
 - Implantação de aplicações em produção  
 - Integração do Docker com pipelines CI/CD  
 
-<h2>Comandos do Dockerfile</h2>
-<ul>
-    <li><strong>FROM</strong> - Define a imagem base.<br>
-        Exemplo: <code>FROM ubuntu:latest</code></li>
-    <li><strong>RUN</strong> - Executa comandos no contêiner durante a construção.<br>
-        Exemplo: <code>RUN apt-get update && apt-get install -y nginx</code></li>
-    <li><strong>COPY</strong> - Copia arquivos do host para o contêiner.<br>
-        Exemplo: <code>COPY index.html /usr/share/nginx/html/</code></li>
-    <li><strong>ADD</strong> - Copia arquivos do host ou de uma URL para o contêiner, podendo descompactar arquivos.<br>
-        Exemplo: <code>ADD arquivo.tar.gz /app/</code> ou <code>ADD https://url.do/arquivo.ext /caminho/para/o/</code></li>
-    <li><strong>WORKDIR</strong> - Define o diretório de trabalho.<br>
-        Exemplo: <code>WORKDIR /app</code></li>
-    <li><strong>CMD</strong> - Define o comando padrão a ser executado.<br>
-        Exemplo: <code>CMD ["nginx", "-g", "daemon off;"]</code></li>
-    <li><strong>ENTRYPOINT</strong> - Define o comando principal do contêiner.<br>
-        Exemplo: <code>ENTRYPOINT ["python", "app.py"]</code></li>
-    <li><strong>EXPOSE</strong> - Expõe uma porta do contêiner.<br>
-        Exemplo: <code>EXPOSE 80</code></li>
-    <li><strong>ENV</strong> - Define variáveis de ambiente.<br>
-        Exemplo: <code>ENV PORT=8080</code></li>
-    <li><strong>VOLUME</strong> - Define um volume para persistência de dados.<br>
-        Exemplo: <code>VOLUME /app/data</code></li>
-</ul>
+---
 
-<h2>Comandos Úteis do Docker</h2>
-<ul>
-    <li><strong>docker build</strong> - Cria uma imagem a partir de um Dockerfile.<br>
-        Exemplo: <code>docker build -t minha-imagem .</code></li>
-    <li><strong>docker run</strong> - Executa um contêiner baseado em uma imagem.<br>
-        Exemplo: <code>docker run -d -p 80:80 minha-imagem</code></li>
-    <li><strong>docker ps</strong> - Lista os contêineres em execução.</li>
-    <li><strong>docker ps -a</strong> - Lista todos os contêineres, incluindo os parados.</li>
-    <li><strong>docker images</strong> - Lista todas as imagens disponíveis.</li>
-    <li><strong>docker rm</strong> - Remove um contêiner.<br>
-        Exemplo: <code>docker rm meu-container</code></li>
-    <li><strong>docker rmi</strong> - Remove uma imagem.<br>
-        Exemplo: <code>docker rmi minha-imagem</code></li>
-    <li><strong>docker stop</strong> - Para um contêiner em execução.<br>
-        Exemplo: <code>docker stop meu-container</code></li>
-    <li><strong>docker logs</strong> - Exibe os logs de um contêiner.<br>
-        Exemplo: <code>docker logs meu-container</code></li>
-    <li><strong>docker exec</strong> - Executa um comando dentro de um contêiner em execução.<br>
-        Exemplo: <code>docker exec -it meu-container /bin/bash</code></li>
-    <li><strong>docker volume create</strong> - Cria um volume.<br>
-        Exemplo: <code>docker volume create meu-volume</code></li>
-    <li><strong>docker volume ls</strong> - Lista todos os volumes.</li>
-    <li><strong>docker volume inspect</strong> - Exibe detalhes sobre um volume.<br>
-        Exemplo: <code>docker volume inspect meu-volume</code></li>
-    <li><strong>docker volume rm</strong> - Remove um volume.<br>
-        Exemplo: <code>docker volume rm meu-volume</code></li>
-    <li><strong>docker run -v</strong> - Monta um volume em um contêiner.<br>
-        Exemplo: <code>docker run -d -v meu-volume:/app/data minha-imagem</code></li>
-</ul>
+## 🐳 Comandos do **Dockerfile**
+
+### `FROM`
+Define a imagem base para a construção do container.  
+**Exemplo:**
+```dockerfile
+FROM ubuntu:latest
+```
+
+### `RUN`
+Executa comandos no container durante o processo de build.  
+**Exemplo:**
+```dockerfile
+RUN apt-get update && apt-get install -y nginx
+```
+
+### `COPY`
+Copia arquivos do host para dentro do container.  
+**Exemplo:**
+```dockerfile
+COPY index.html /usr/share/nginx/html/
+```
+
+### `ADD`
+Copia arquivos do host ou de uma URL para dentro do container, com suporte a descompactação automática.  
+**Exemplo:**
+```dockerfile
+ADD arquivo.tar.gz /app/
+ADD https://url.do/arquivo.ext /destino/
+```
+
+### `WORKDIR`
+Define o diretório de trabalho padrão para os comandos subsequentes.  
+**Exemplo:**
+```dockerfile
+WORKDIR /app
+```
+
+### `CMD`
+Define o comando padrão a ser executado quando o container for iniciado (pode ser sobrescrito).  
+**Exemplo:**
+```dockerfile
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### `ENTRYPOINT`
+Define o comando principal que sempre será executado no container.  
+**Exemplo:**
+```dockerfile
+ENTRYPOINT ["python", "app.py"]
+```
+
+### `EXPOSE`
+Informa qual porta o container expõe para comunicação.  
+**Exemplo:**
+```dockerfile
+EXPOSE 80
+```
+
+### `ENV`
+Define variáveis de ambiente dentro do container.  
+**Exemplo:**
+```dockerfile
+ENV PORT=8080
+```
+
+### `VOLUME`
+Define pontos de montagem para persistência de dados.  
+**Exemplo:**
+```dockerfile
+VOLUME /app/data
+```
+
+---
+
+## 🔧 Comandos Úteis do Docker
+
+### Criar uma imagem a partir de um Dockerfile
+```bash
+docker build -t minha-imagem .
+```
+
+### Executar um container
+```bash
+docker run -d -p 80:80 minha-imagem
+```
+
+### Listar containers
+```bash
+docker ps        # Apenas containers em execução
+docker ps -a     # Todos os containers (incluindo parados)
+```
+
+### Listar imagens
+```bash
+docker images
+```
+
+### Remover container
+```bash
+docker rm meu-container
+```
+
+### Remover imagem
+```bash
+docker rmi minha-imagem
+```
+
+### Parar container
+```bash
+docker stop meu-container
+```
+
+### Ver logs de um container
+```bash
+docker logs meu-container
+```
+
+### Executar comando dentro de um container
+```bash
+docker exec -it meu-container /bin/bash
+```
+
+### Criar volume
+```bash
+docker volume create meu-volume
+```
+
+### Listar volumes
+```bash
+docker volume ls
+```
+
+### Inspecionar volume
+```bash
+docker volume inspect meu-volume
+```
+
+### Remover volume
+```bash
+docker volume rm meu-volume
+```
+
+### Montar volume ao criar container
+```bash
+docker run -d -v meu-volume:/app/data minha-imagem
+```
+
+---
+
+💡 **Dica:** Sempre nomeie containers, imagens e volumes de forma clara para facilitar manutenção e automação.
