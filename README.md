@@ -1,11 +1,11 @@
-# 🚀 Docker do Básico ao Avançado
+# Docker do Básico ao Avançado
 
 Este repositório contém materiais práticos e objetivos sobre Docker, abordando desde os conceitos iniciais até práticas avançadas para uso em produção.
 
-* 📄 Arquivo com os comandos mais importantes: [docker-cheat-sheet](https://github.com/luisitcho/curso-docker-lacono-2025/blob/main/docker-cheat-sheet.pdf)
+* Arquivo com os comandos mais importantes: [docker-cheat-sheet](https://github.com/luisitcho/curso-docker-lacono-2025/blob/main/docker-cheat-sheet.pdf)
 * 🎓 [Certificado de conclusão](https://www.udemy.com/certificate/UC-c1071bbb-0321-4da5-899b-94ab7584a144/)
 
-## 📚 Tópicos Abordados
+## Tópicos Abordados
 - Conceitos básicos de containers  
 - Instalação do Docker em diferentes sistemas operacionais  
 - Criação e personalização de imagens  
@@ -17,7 +17,7 @@ Este repositório contém materiais práticos e objetivos sobre Docker, abordand
 
 ---
 
-## 🐳 Comandos do **Dockerfile**
+## Comandos do **Dockerfile**
 
 ### `FROM`
 Define a imagem base para a construção do container.  
@@ -167,4 +167,4 @@ docker run -d -v meu-volume:/app/data minha-imagem
 
 ---
 
-💡 **Dica:** Sempre nomeie containers, imagens e volumes de forma clara para facilitar manutenção e automação.
+> ⚠️ Nota: Sempre nomeie containers, imagens e volumes de forma clara para facilitar manutenção e automação.
