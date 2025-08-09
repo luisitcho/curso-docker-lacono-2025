@@ -2,6 +2,9 @@
 
 Este repositório contém materiais práticos e objetivos sobre Docker, abordando desde os conceitos iniciais até práticas avançadas para uso em produção.
 
+* 📄 Arquivo com os comandos mais importantes: [docker-cheat-sheet](https://github.com/luisitcho/curso-docker-lacono-2025/blob/main/docker-cheat-sheet.pdf)
+* 🎓 [Certificado de conclusão](https://www.udemy.com/certificate/UC-c1071bbb-0321-4da5-899b-94ab7584a144/)
+
 ## 📚 Tópicos Abordados
 - Conceitos básicos de containers  
 - Instalação do Docker em diferentes sistemas operacionais  
