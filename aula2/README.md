@@ -10,7 +10,7 @@ https://github.com/docker/getting-started
 
 ---
 
-## 📦 Explicação dos Comandos Docker
+## Explicação dos Comandos Docker
 
 ### 1. Construção de Imagem
 ```bash
@@ -89,4 +89,4 @@ Importa uma imagem armazenada no arquivo `appv2.tar` de volta para o Docker.
 
 ---
 
-💡 **Dica:** Sempre verifique as imagens existentes antes de remover (`docker images`) para evitar apagar algo importante.
+> ⚠️ Nota:  Sempre verifique as imagens existentes antes de remover (`docker images`) para evitar apagar algo importante.
